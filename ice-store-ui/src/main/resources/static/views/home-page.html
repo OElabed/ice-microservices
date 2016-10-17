@@ -1,0 +1,105 @@
+<section class="home-intro">
+  <section class="container">
+    <section class="row">
+      <section class="col-xs-12">
+        <section class="whats-inside">
+          <h1>Here's what's inside</h1>
+
+          <ul>
+            <li>
+              <i class="glyphicon glyphicon-circle-arrow-right"></i>
+              a layout module that glues the app together (a few directives).
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-circle-arrow-right"></i>
+              a "profile feature" that contains sample data for two entities: <b>customers</b> and <b>providers</b>.
+            </li>
+            <li>
+              <i class="glyphicon glyphicon-circle-arrow-right"></i>
+              a 'profile model' and a couple of services to retrieve the data.
+            </li>
+          </ul>
+        </section>
+
+        <a href="http://fadeit.dk" target="_blank" class="fadeit-link">
+          <img src="src/assets/img/brand/logo_white.svg" alt="fadeit logo"/>
+        </a>
+      </section>
+    </section>
+  </section>
+</section>
+
+<section class="container">
+  <section class="row clearfix">
+    <section class="col-xs-12">
+      <section class="page-header">
+        <h2>Now let's look at some examples</h2>
+      </section>
+      <p class="lead">
+        The section below should give you an idea of what's implemented.<br/>
+        Check out the <a href ui-sref="about">about page</a> for more info on the project.
+      </p>
+    </section>
+  </section>
+</section>
+
+<section class="jumbotron clearfix">
+  <section class="container">
+    <section class="row">
+      <section class="col-xs-12 col-sm-6">
+        <section class="list-group" data-ng-if="!vm.providers.statusText">
+          <header class="list-group-item">
+            <h3>There are <span data-ng-bind="vm.providers.length"></span> sample providers.</h3>
+            <span>
+              A provider in this context is a company that can perform a service, for example a mechanic (the sample data is in fact about mechanics).<br/>
+              Navigate to one of the providers below in order to see their profile:
+            </span>
+          </header>
+
+          <a class="list-group-item" data-ng-repeat="provider in vm.providers track by $index" href="#!/provider/{{provider.id}}">
+            <i class="glyphicon glyphicon-link"></i>
+            <span data-ng-bind="provider.name"></span>
+          </a>
+        </section>
+
+        <section class="no-providers" data-ng-if="vm.providers.statusText">
+          <h4>Sorry, there was an error getting the providers: <i data-ng-bind="::vm.providers.statusText"></i></h4>
+        </section>
+      </section>
+
+      <section class="col-xs-12 col-sm-6">
+        <section class="list-group" data-ng-if="!vm.customers.statusText">
+          <header class="list-group-item">
+            <h3>There are <span data-ng-bind="vm.customers.length"></span> example customers.</h3>
+            <span>
+              A customer in this context is a user like you an me, supposedly looking to hire a provider (think of it as a very basic profile).<br/>
+              Navigate to one of the customers below in order to see their profile:
+            </span>
+          </header>
+
+          <a class="list-group-item" data-ng-repeat="customer in vm.customers track by $index" href="#!/customer/{{customer.id}}">
+            <i class="glyphicon glyphicon-user"></i>
+            <span data-ng-bind="customer.surname"></span>
+            <span data-ng-bind="customer.name"></span>
+          </a>
+        </section>
+
+        <section class="no-customers" data-ng-if="vm.customers.statusText">
+          <h4>Sorry, there was an error getting the customers: <i data-ng-bind="::vm.customers.statusText"></i></h4>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<section class="container">
+  <section class="row clearfix">
+    <section class="col-xs-12">
+      <p class="lead">
+        You can find the example data in <u>/src/app/shared/profile-model/profile-data/</u>.<br/>
+        Play around with it or replace the callback url of the services in <u>/src/app/shared/profile-model</u> with a real back-end.
+        <hr/>
+      </p>
+    </section>
+  </section>
+</section>

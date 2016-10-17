@@ -1,0 +1,28 @@
+{
+    "ports": {
+        "web-server": {
+            ":host": 3888,
+            ":guest": 8888
+        },
+        "test-server": {
+            ":host": 3999,
+            ":guest": 9999
+        },
+        "sellinium-server": {
+            ":host": 3444,
+            ":guest": 4444
+        },
+        "coverage-server": {
+            ":host": 3555,
+            ":guest": 5555
+        },
+        "livereload-server": {
+            ":host": 3777,
+            ":guest": 7777
+        },
+        "springBoot-server": {
+            ":host": 3111,
+            ":guest": 8080
+        }
+    }
+}

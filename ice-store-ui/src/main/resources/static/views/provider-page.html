@@ -1,0 +1,100 @@
+<section class="container">
+  <section class="page-header">
+    <h2>
+      <span data-ng-bind="vm.provider.name"></span>
+      <small>
+        <i class="glyphicon glyphicon-earphone"></i>
+        <span data-ng-bind="vm.provider.contact.phone"></span>
+      </small>
+    </h2>
+  </section>
+
+  <section class="row service-list" data-ng-if="vm.provider.services">
+    <section class="col-xs-12">
+      <h3>Listed services</h3>
+    </section>
+
+    <section class="col-xs-12">
+      <section class="form-group service-filter">
+        <input type="text" class="form-control" placeholder="Filter services..." data-ng-model="search" ng-model-options="{debounce: 400}">
+      </section>
+    </section>
+
+    <p class="col-xs-12 col-sm-3" data-ng-repeat="service in vm.provider.services | filter:search as results track by $index">
+      <i class="glyphicon glyphicon-ok-sign"></i>
+      <span data-ng-bind="service"></span>
+    </p>
+
+    <p class="col-xs-12" data-ng-if="results.length === 0">Sorry, no items match your search</p>
+  </section>
+
+  <p data-ng-if="!vm.provider.services">
+    <em>This provider has no services listed yet.</em>
+  </p>
+</section>
+
+<section class="container-fluid profile-page">
+  <section class="container">
+    <section class="row">
+      <section class="col-xs-12 col-sm-6">
+        <section class="providers" data-ng-if="!vm.provider.statusText">
+          <section class="lead">
+            <dl class="col-xs-12 col-sm-6">
+              <dt>Street</dt>
+              <dd data-ng-bind="vm.provider.address.street"></dd>
+            </dl>
+
+            <dl class="col-xs-12 col-sm-6">
+              <dt>City</dt>
+              <dd data-ng-bind="vm.provider.address.city"></dd>
+            </dl>
+
+            <dl class="col-xs-12 col-sm-6">
+              <dt>Country</dt>
+              <dd data-ng-bind="vm.provider.address.country"></dd>
+            </dl>
+
+            <dl class="col-xs-12 col-sm-6">
+              <dt>Postcode</dt>
+              <dd data-ng-bind="vm.provider.address.postcode"></dd>
+            </dl>
+          </section>
+        </section>
+
+        <section class="no-providers" data-ng-if="vm.provider.statusText">
+          <h4>
+            Sorry, there following error occurred while getting details for this provider: <i data-ng-bind="::vm.provider.statusText"></i>
+          </h4>
+        </section>
+      </section>
+
+      <section class="col-xs-12 col-sm-6">
+        <section class="list-group" data-ng-if="!vm.otherProviders.statusText">
+          <header class="list-group-item">
+            <h4>Check out some other providers.</h4>
+            <p>Here are some handy options, different from the current one:</p>
+          </header>
+
+          <a class="list-group-item" data-ng-repeat="provider in vm.otherProviders track by $index" href="#!/provider/{{provider.id}}" data-ng-bind="provider.name">
+          </a>
+        </section>
+
+        <section class="no-providers" data-ng-if="vm.otherProviders.statusText">
+          <h4>
+            Sorry, there was an error getting the other providers: <i data-ng-bind="::vm.otherProviders.statusText"></i>
+          </h4>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+
+<section class="container-fluid profile-footer">
+  <section class="container">
+    <section class="row">
+      <section class="col-xs-12">
+        Email <span data-ng-bind="vm.provider.name"></span> at <a href="mailto:{{vm.provider.contact.email}}" data-ng-bind="vm.provider.contact.email"></a>
+      </section>
+    </section>
+  </section>
+</section>

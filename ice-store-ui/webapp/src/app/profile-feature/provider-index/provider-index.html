@@ -1,0 +1,45 @@
+<section class="row-fluid clearfix">
+  <section class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <section class="panel panel-default intro">
+      <section class="panel-heading">
+        <h3 class="panel-title">Here is a list of available providers</h3>
+      </section>
+      <section class="panel-body">
+        <section class="form-group">
+          <input type="text" class="form-control" placeholder="Filter providers by name..." data-ng-model="search.name" ng-model-options="{debounce: 400}">
+        </section>
+
+        <table class="table table-hover">
+          <thead data-ng-if="!vm.providers.statusText && results.length !== 0">
+          <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Provider Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="provider in vm.providers | filter:search as results track by $index">
+              <td data-ng-bind="$index+1"></td>
+              <td data-ng-bind="provider.name"></td>
+              <td>
+                <small data-ng-bind="provider.address.street + ' ' + provider.address.city + ' ' + provider.address.postcode"></small>
+              </td>
+              <td><a href="#!/provider/{{provider.id}}">See provider</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p data-ng-if="results.length === 0">Sorry, no providers match your search</p>
+
+        <section class="no-providers" data-ng-if="vm.providers.statusText">
+          <h4>Sorry, there was an error getting the providers: <i data-ng-bind="::vm.providers.statusText"></i></h4>
+        </section>
+      </section>
+
+      <div class="panel-footer">
+        Looking good? You can <a ui-sref="customerIndex">see a list of all customers</a> too!
+      </div>
+    </section>
+  </section>
+</section>

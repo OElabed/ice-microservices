@@ -1,0 +1,60 @@
+<section class="container">
+  <section class="page-header">
+    <h2>
+      <span data-ng-bind="vm.customer.name + ' ' + vm.customer.surname"></span>
+      <small>Member since <span data-ng-bind="::vm.customer.joined | date:'longDate'"></span></small>
+    </h2>
+  </section>
+</section>
+
+<section class="container-fluid profile-page">
+  <section class="container">
+    <section class="row">
+      <section class="col-xs-12 col-sm-6">
+        <section class="customers" data-ng-if="!vm.customer.statusText">
+          <section class="lead">
+            <dl class="col-xs-12 col-sm-6 label-group">
+              <dt>Street</dt>
+              <dd data-ng-bind="vm.customer.address.street"></dd>
+            </dl>
+            <dl class="col-xs-12 col-sm-6 label-group">
+              <dt>City</dt>
+              <dd data-ng-bind="vm.customer.address.city"></dd>
+            </dl>
+            <dl class="col-xs-12 col-sm-6 label-group">
+              <dt>Country</dt>
+              <dd data-ng-bind="vm.customer.address.country"></dd>
+            </dl>
+            <dl class="col-xs-12 col-sm-6 label-group">
+              <dt>Postcode</dt>
+              <dd data-ng-bind="vm.customer.address.postcode"></dd>
+            </dl>
+          </section>
+        </section>
+
+        <section class="no-customers" data-ng-if="vm.customer.statusText">
+          <h4>
+            Sorry, there following error occurred while getting details for this customer: <i data-ng-bind="::vm.customer.statusText"></i>
+          </h4>
+        </section>
+      </section>
+
+      <section class="col-xs-12 col-sm-6">
+        <section class="list-group">
+          <header class="list-group-item">
+            <h4>That's about it on this page.</h4>
+            <p>Here are some options:</p>
+          </header>
+
+          <a class="list-group-item" ui-sref="providerIndex">
+            See a list of all providers
+          </a>
+
+          <a class="list-group-item" ui-sref="customerIndex">
+            See a list of all customers
+          </a>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
