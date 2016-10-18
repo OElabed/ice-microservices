@@ -22,20 +22,31 @@
  * THE SOFTWARE.
  */
 
-rootProject.name = 'ice'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'application'
+apply plugin: 'jacoco'
 
-// FrontEnd services
-include "ice-store-ui"
+dependencies {
+    //compile project(':common')
 
-// Backing services
-include "ice-config-ms"
-include "ice-discovery-ms"
-include "ice-hystrix-dashboard-ms"
-include "ice-auth-ms"
-include "ice-getway-ms"
+    // Spring Boot
+    compile("org.springframework.boot:spring-boot-starter-web")
 
-// Backend services
-include "ice-account-ms"
+    // tag::actuator[]
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    // end::actuator[]
 
-// Common services
-include "ice-common"
+    // tag::tests[]
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    // end::tests[]
+}
+
+/**
+ * UNIT TESTS
+ */
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

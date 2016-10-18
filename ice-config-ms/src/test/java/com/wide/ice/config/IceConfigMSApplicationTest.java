@@ -22,20 +22,20 @@
  * THE SOFTWARE.
  */
 
-rootProject.name = 'ice'
+package com.wide.ice.config;
 
-// FrontEnd services
-include "ice-store-ui"
+import static org.junit.Assert.*;
 
-// Backing services
-include "ice-config-ms"
-include "ice-discovery-ms"
-include "ice-hystrix-dashboard-ms"
-include "ice-auth-ms"
-include "ice-getway-ms"
+import org.junit.Test;
 
-// Backend services
-include "ice-account-ms"
+/**
+ * Created by OELABED on 15/10/2016.
+ */
+public class IceConfigMSApplicationTest {
 
-// Common services
-include "ice-common"
+    @Test
+    public void test() {
+        assertTrue(true);
+    }
+
+}

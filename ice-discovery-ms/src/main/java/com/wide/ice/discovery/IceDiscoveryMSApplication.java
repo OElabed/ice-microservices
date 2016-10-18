@@ -22,32 +22,18 @@
  * THE SOFTWARE.
  */
 
-package com.wide.ice.common;
+package com.wide.ice.discovery;
 
-import java.io.Serializable;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+@SpringBootApplication
+public class IceDiscoveryMSApplication {
 
-import lombok.Getter;
+    public static void main(String[] args) {
 
-/**
- * Created by OELABED on 15/10/2016.
- */
-@Getter
-public abstract class AbstractEvent<T> implements Serializable {
+        SpringApplication.run(IceDiscoveryMSApplication.class, args);//NOSONAR
 
-    private static final long serialVersionUID = 3812756841866731544L;
-
-    private T id;
-
-    protected AbstractEvent(T id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.JSON_STYLE);
     }
 
 }
