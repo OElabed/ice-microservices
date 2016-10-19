@@ -194,6 +194,11 @@ exec { '(Node modules) install bower':
 	require => Package [ 'nodejs' ]
 }
 
+exec { '(Node modules) install git-changelog':
+	command => '/usr/bin/npm install -g git-changelog',
+	require => Package [ 'nodejs' ]
+}
+
 exec { '(Node modules) install phantomjs':
 	command => '/usr/bin/npm install -g phantomjs',
 	require => Package [ 'nodejs' ]
