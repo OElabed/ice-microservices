@@ -1,2 +1,2 @@
-![ice micros logo](https://github.com/OElabed/ice-microservices/blob/master/docs/img/ice-logo.png)
+<img src="docs/img/ice-logo.png" width="200" />
 ---
