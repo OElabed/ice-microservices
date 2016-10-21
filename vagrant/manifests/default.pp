@@ -164,6 +164,11 @@ exec { '(Docker) Install docker compose':
 	require => Exec [ 'install docker','install pip' ]
 }
 
+exec { '(Docker) Remote API Config':
+	command => '/bin/chmod 777 /etc/default/docker && /bin/echo 'DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"' >> /etc/default/docker && /usr/bin/service docker restart',
+	require => Exec [ '(Docker) Boot docker' ]
+}
+
 package { 'docker':
   ensure  => 'present',
   require => Exec [ 'install docker' ]

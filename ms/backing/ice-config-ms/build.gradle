@@ -25,6 +25,7 @@
  buildscript {
     ext {
         SPRING_BOOT_VERSION = '1.4.0.RELEASE'
+        SONARQUBE_VERSION = '2.2'
     }
 
     repositories {
@@ -37,17 +38,24 @@
 
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${SPRING_BOOT_VERSION}")
+        classpath ("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${SONARQUBE_VERSION}")
     }
 }
 
 
+def microsGroup;
+def microsVersion;
+def microsName = 'ice-config-ms'
+def description = 'Account microservices' 
+
+
 def Properties props = new Properties()
 def propFile = file('../../ms.properties')
-def versionNum;
 if (propFile.canRead()){
     props.load(new FileInputStream(propFile))
     if (props!=null && props.containsKey('version.number')) {
-        versionNum = props['version.number']
+        microsVersion = props['version.number']
+        microsGroup = props['group.name']
     }
 }
 
@@ -59,14 +67,16 @@ apply plugin: 'jacoco'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'maven'
+apply plugin: 'org.sonarqube'
 
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 jar {
-    baseName = 'ice-config-ms'
-    version = versionNum
+    baseName = microsName
+    version = microsVersion
+    group = microsGroup
 }
 
 repositories {
@@ -101,4 +111,16 @@ test {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.13'
+}
+
+/**
+* SONAR QUBE
+*/
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Java :: ${microsName} :: ${description}"
+        property "sonar.projectKey", "${microsGroup}:${microsName}"
+        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+    }
 }
