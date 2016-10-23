@@ -25,6 +25,7 @@
  buildscript {
     ext {
         SPRING_BOOT_VERSION = '1.4.0.RELEASE'
+        SPRING_CLOUD = 'Camden.SR1'
         SONARQUBE_VERSION = '2.2'
     }
 
@@ -42,11 +43,17 @@
     }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${SPRING_CLOUD}")
+    }
+}
+
 
 def microsGroup;
 def microsVersion;
 def microsName = 'ice-auth-ms'
-def description = 'Account microservices' 
+def description = 'Authentification microservice' 
 
 
 def Properties props = new Properties()
@@ -86,10 +93,15 @@ repositories {
 
 
 dependencies {
-    //compile project(':common')
 
     // Spring Boot
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.security.oauth:spring-security-oauth2")
+
+    // Spring Cloud
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
 
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")

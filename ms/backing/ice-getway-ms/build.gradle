@@ -45,8 +45,8 @@
 
 def microsGroup;
 def microsVersion;
-def microsName = 'ice-account-ms'
-def description = 'Account microservices' 
+def microsName = 'ice-getway-ms'
+def description = 'API Getway microservices' 
 
 
 def Properties props = new Properties()
@@ -86,7 +86,6 @@ repositories {
 
 
 dependencies {
-    //compile project(':common')
 
     // Spring Boot
     compile("org.springframework.boot:spring-boot-starter-web")

@@ -29,6 +29,7 @@ buildscript {
         APPACHE_COMMON = '3.4'
         LOMBOK_VERSION = '1.16.8'
         JUNIT_VERSION = '4.12'
+        SONARQUBE_VERSION = '2.2'
     }
 
     repositories {
@@ -38,16 +39,26 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
     }
+
+    dependencies {
+        classpath ("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${SONARQUBE_VERSION}")
+    }
 }
+
+
+def microsGroup;
+def microsVersion;
+def microsName = 'ice-common'
+def description = 'Common library' 
 
 
 def Properties props = new Properties()
 def propFile = file('../../ms.properties')
-def versionNum;
 if (propFile.canRead()){
     props.load(new FileInputStream(propFile))
     if (props!=null && props.containsKey('version.number')) {
-        versionNum = props['version.number']
+        microsVersion = props['version.number']
+        microsGroup = props['group.name']
     }
 }
 
@@ -57,14 +68,16 @@ apply plugin: 'jacoco'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'maven'
+apply plugin: 'org.sonarqube'
 
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 jar {
-    baseName = 'ice-common'
-    version = versionNum
+    baseName = microsName
+    version = microsVersion
+    group = microsGroup
 }
 
 repositories {
@@ -78,4 +91,16 @@ dependencies {
     compile("org.apache.commons:commons-lang3:${APPACHE_COMMON}")
     compile("org.projectlombok:lombok:${LOMBOK_VERSION}")
     testCompile("junit:junit:${JUNIT_VERSION}")
+}
+
+/**
+* SONAR QUBE
+*/
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Java :: ${microsName} :: ${description}"
+        property "sonar.projectKey", "${microsGroup}:${microsName}"
+        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
+    }
 }

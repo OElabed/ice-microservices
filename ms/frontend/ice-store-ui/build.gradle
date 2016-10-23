@@ -45,8 +45,8 @@
 
 def microsGroup;
 def microsVersion;
-def microsName = 'ice-account-ms'
-def description = 'Account microservices' 
+def microsName = 'ice-store-ui'
+def description = 'Store frontend' 
 
 
 def Properties props = new Properties()

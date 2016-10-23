@@ -1,6 +1,5 @@
 sonarqube:
   image: sonarqube:latest
-  dockerfile: Dockerfile
   ports:
     - "9000:9000"
     - "9092:9092"

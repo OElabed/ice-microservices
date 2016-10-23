@@ -165,8 +165,13 @@ exec { '(Docker) Install docker compose':
 }
 
 exec { '(Docker) Remote API Config':
-	command => '/bin/chmod 777 /etc/default/docker && /bin/echo 'DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"' >> /etc/default/docker && /usr/bin/service docker restart',
+	command => '/bin/chmod 777 /etc/default/docker && /bin/echo 'DOCKER_OPTS="-H tcp://127.0.0.1:4243 -H unix:///var/run/docker.sock"' >> /etc/default/docker && /usr/bin/service docker restart',
 	require => Exec [ '(Docker) Boot docker' ]
+}
+
+exec { '(Docker) Remote API Config variable':
+	command => '/bin/echo \'DOCKER_HOST=tcp://localhost:4243\' >> /home/vagrant/.bashrc && /bin/echo \'export DOCKER_HOST\' >> /home/vagrant/.bashrc',
+	require => Exec [ '(Docker) Remote API Config' ]
 }
 
 package { 'docker':
