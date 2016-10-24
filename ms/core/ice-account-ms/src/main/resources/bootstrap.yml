@@ -1,6 +1,19 @@
 spring:
   application:
-    name: ice-account-ms
+    name: ice-account-ms     
+---
+spring:
+  profiles: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      password: ${CONFIG_SERVICE_PASSWORD}
+      username: user
+spring.profiles.active: docker
+---
+spring:
+  profiles: docker
   cloud:
     config:
       uri: http://localhost:8888
