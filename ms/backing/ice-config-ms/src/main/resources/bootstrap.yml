@@ -8,6 +8,7 @@ spring:
       server:
         git:
           uri: https://github.com/OElabed/ice-microservices-config.git
+          #uri: ${CONFIG_REPO:${HOME}/workspace/ice-microservices-config}
 security:
   basic:
     enabled: false
