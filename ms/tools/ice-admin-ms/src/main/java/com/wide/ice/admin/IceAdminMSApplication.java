@@ -28,15 +28,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+import de.codecentric.boot.admin.config.EnableAdminServer;
+
 // tag::application-eureka[]
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableAdminServer
+@EnableAdminServer
 public class IceAdminMSApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(IceAccountMSApplication.class, args);//NOSONAR
+        SpringApplication.run(IceAdminMSApplication.class, args);//NOSONAR
 
     }
 

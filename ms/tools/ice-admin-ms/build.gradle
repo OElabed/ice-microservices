@@ -51,7 +51,7 @@
 def microsGroup;
 def microsVersion;
 def microsName = 'ice-admin-ms'
-def description = 'Account microservices' 
+def description = 'Admin dashboard microservices' 
 
 
 def Properties props = new Properties()
@@ -101,9 +101,9 @@ dependencyManagement {
 dependencies {
     //compile project(':common')
     //Spring Admin
-    compile("de.codecentric:spring-boot-admin-server:{SPRING_ADMIN}")
-    compile("de.codecentric:spring-boot-admin-server-ui:{SPRING_ADMIN}")
-    compile("de.codecentric:spring-boot-admin-server-ui-hystrix:{SPRING_ADMIN}")
+    compile("de.codecentric:spring-boot-admin-server:${SPRING_ADMIN}")
+    compile("de.codecentric:spring-boot-admin-server-ui:${SPRING_ADMIN}")
+    compile("de.codecentric:spring-boot-admin-server-ui-hystrix:${SPRING_ADMIN}")
     
 
 

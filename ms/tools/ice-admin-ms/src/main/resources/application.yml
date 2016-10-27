@@ -4,6 +4,13 @@ spring:
   cloud:
     config:
       enabled: false
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
 # tag::configuration-eureka[]
 eureka:
   instance:
@@ -17,3 +24,5 @@ eureka:
 # tag::configuration-ui-hystrix[]
 spring.boot.admin.routes.endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream,turbine.stream
 # end::configuration-ui-hystrix[]
+
+
