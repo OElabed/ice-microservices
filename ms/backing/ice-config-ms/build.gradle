@@ -109,6 +109,7 @@ dependencies {
     // Spring Cloud
     compile("org.springframework.cloud:spring-cloud-config-server")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
 
 
     // tag::actuator[]

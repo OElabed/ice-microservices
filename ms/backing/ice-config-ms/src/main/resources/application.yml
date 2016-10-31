@@ -12,7 +12,13 @@ spring:
     config:
       server:
         git:
-          uri: file:/workspace-config/ice-microservices-config/
+          uri: file:/workspace-config/
+  rabbitmq:
+    # addresses: localhost:5672
+    host: localhost
+    port: 5672
+    username: user
+    password: hello00
 
 server:  
   port: 8888
