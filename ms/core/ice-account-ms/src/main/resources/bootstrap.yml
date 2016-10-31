@@ -6,11 +6,15 @@ spring:
   profiles: default
   cloud:
     config:
-      uri: http://localhost:8888
+      enabled: true
+      discovery:
+        enabled: true
+        serviceId: ice-config-ms
       fail-fast: true
       password: ${CONFIG_SERVICE_PASSWORD}
       username: user
-spring.profiles.active: dev
+      profile: prod
+      
 eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
@@ -18,6 +22,8 @@ eureka:
     registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+endpoints.shutdown.enabled: true
 ---
 spring:
   profiles: docker

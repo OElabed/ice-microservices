@@ -1,0 +1,23 @@
+[
+    {
+        "appname" : "ice-config-ms",
+        "type" : "backing",
+        "startup_time" : 60,
+        "host" : "localhost",       
+        "port" : 8100 
+    },
+    {
+        "appname" : "ice-discovery-ms",
+        "type" : "backing",
+        "startup_time" : 60,
+        "host" : "localhost",               
+        "port" : 8200 
+    },
+    {
+        "appname" : "ice-account-ms",
+        "type" : "core",
+        "startup_time" : 0,
+        "host" : "localhost",               
+        "port" : 8300 
+    }
+]

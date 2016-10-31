@@ -1,6 +1,53 @@
-server:
-  port: 8888
 spring:
+  profiles.active: dev
+---
+############################
+# PROFILE DEV DEFAULT
+############################
+spring:
+  profiles: dev
+  application:
+    name: ice-config-ms
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:/workspace-config/ice-microservices-config/
+
+server:  
+  port: 8888
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+logging:
+  file: logs/dev_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true
+
+---
+############################
+# PROFILE GIT
+############################
+spring:
+  profiles: git
   application:
     name: ice-config-ms
   cloud:
@@ -8,10 +55,115 @@ spring:
       server:
         git:
           uri: https://github.com/OElabed/ice-microservices-config.git
-          #uri: ${CONFIG_REPO:${HOME}/workspace/ice-microservices-config}
+
+server:  
+  port: 8880
+
 security:
   basic:
     enabled: false
   user:
     name: user
     password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+logging:
+  file: logs/git_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true
+
+---
+############################
+# PROFILE DOCKER
+############################
+spring:
+  profiles: docker
+  application:
+    name: ice-config-ms
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/OElabed/ice-microservices-config.git
+
+server:  
+  port: 8880
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+logging:
+  file: logs/docker_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true
+
+---
+############################
+# PROFILE PRODUCTION 
+############################
+spring:
+  profiles: prod
+  application:
+    name: ice-config-ms
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/OElabed/ice-microservices-config.git
+
+server:  
+  port: 8880
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+logging:
+  file: logs/prod_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true

@@ -1,14 +1,23 @@
 spring:
+  profiles.active: dev
+---
+############################
+# PROFILE DEV DEFAULT
+############################
+spring:
+  profiles: dev
   application:
     name: ice-discovery-ms
-  cloud:
-    config:
-      uri: http://localhost:8888
-      fail-fast: true
-      password: ${CONFIG_SERVICE_PASSWORD}
-      username: user
+
 server:
   port: 8761
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
 
 eureka:
   instance:
@@ -19,9 +28,88 @@ eureka:
     server:
       waitTimeInMsWhenSyncEmpty: 0
 
+logging:
+  file: logs/dev_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true
+
+---
+############################
+# PROFILE DOCKER
+############################
+spring:
+  profiles: docker
+  application:
+    name: ice-discovery-ms
+
+server:
+  port: 8761
+
 security:
   basic:
     enabled: false
   user:
     name: user
     password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+logging:
+  file: logs/docker_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true
+
+---
+############################
+# PROFILE PRODUCTION
+############################
+spring:
+  profiles: prod
+  application:
+    name: ice-discovery-ms
+
+server:
+  port: 8761
+
+security:
+  basic:
+    enabled: false
+  user:
+    name: user
+    password: ${CONFIG_SERVICE_PASSWORD}
+
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+
+logging:
+  file: logs/prod_app.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+
+endpoints.shutdown.enabled: true
