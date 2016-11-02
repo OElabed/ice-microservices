@@ -11,6 +11,7 @@ out/
 *.iws
 *.iml
 
+*.log
 
 .metadata
 bin/

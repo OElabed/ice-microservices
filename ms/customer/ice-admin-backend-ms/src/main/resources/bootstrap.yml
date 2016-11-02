@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ice-account-ms     
+    name: ice-admin-backend-ms     
 ---
 spring:
   profiles: default

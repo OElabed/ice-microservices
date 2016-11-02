@@ -140,3 +140,7 @@ sonarqube {
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
     }
 }
+
+bootRun {
+   jvmArgs = ["-Xms256m", "-Xmx512m"]
+}

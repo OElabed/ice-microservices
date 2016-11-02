@@ -22,21 +22,19 @@
  * THE SOFTWARE.
  */
 
-package com.wide.ice.getway;
+package com.wide.ice.admin.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableZuulProxy
-public class IceGetwayMSApplication {
+public class IceAdminBckMSApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(IceGetwayMSApplication.class, args);//NOSONAR
+        SpringApplication.run(IceAdminBckMSApplication.class, args);//NOSONAR
 
     }
 

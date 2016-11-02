@@ -109,8 +109,6 @@ dependencies {
     // Spring Cloud
     compile("org.springframework.cloud:spring-cloud-config-server")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
-    compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
-
 
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
@@ -144,4 +142,8 @@ sonarqube {
         property "sonar.projectKey", "${microsGroup}:${microsName}"
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
     }
+}
+
+bootRun {
+   jvmArgs = ["-Xms256m", "-Xmx512m"]
 }

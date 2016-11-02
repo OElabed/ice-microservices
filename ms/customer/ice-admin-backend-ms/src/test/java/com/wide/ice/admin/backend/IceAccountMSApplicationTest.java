@@ -22,22 +22,20 @@
  * THE SOFTWARE.
  */
 
-package com.wide.ice.getway;
+package com.wide.ice.admin.backend;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import static org.junit.Assert.*;
 
-@SpringBootApplication
-@EnableDiscoveryClient
-@EnableZuulProxy
-public class IceGetwayMSApplication {
+import org.junit.Test;
 
-    public static void main(String[] args) {
+/**
+ * Created by OELABED on 15/10/2016.
+ */
+public class IceAdminBckMSApplicationTest {
 
-        SpringApplication.run(IceGetwayMSApplication.class, args);//NOSONAR
-
+    @Test
+    public void test() {
+        assertTrue(true);
     }
 
 }

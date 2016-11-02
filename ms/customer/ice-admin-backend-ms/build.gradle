@@ -49,8 +49,8 @@
 
 def microsGroup;
 def microsVersion;
-def microsName = 'ice-account-ms'
-def description = 'Account microservices' 
+def microsName = 'ice-admin-backend-ms'
+def description = 'Admin backend microservice' 
 
 
 def Properties props = new Properties()
@@ -142,6 +142,7 @@ sonarqube {
         property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"
     }
 }
+
 
 bootRun {
    jvmArgs = ["-Xms256m", "-Xmx512m"]
