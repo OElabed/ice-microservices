@@ -1,0 +1,27 @@
+[
+    {
+        "appname" : "ICE_DISCOVERY_MS", 
+        "type" : "support",         
+        "port" : 8761 
+    },
+    {
+        "appname" : "ICE_CONFIG_MS",
+        "type" : "support",   
+        "port" : 8888 
+    },
+    {
+        "appname" : "ICE_GETWAY_MS",   
+        "type" : "support",             
+        "port" : 8010 
+    },
+    {
+        "appname" : "ICE_ACCOUNT_MS",
+        "type" : "core",  
+        "port" : 8300
+    },
+    {
+        "appname" : "ICE_ADMIN_BACKEND_MS",
+        "type" : "customer",  
+        "port" : 8400 
+    }
+]
