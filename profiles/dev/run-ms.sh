@@ -23,12 +23,16 @@ done
 source ./env/export-port.sh
 
 cd ../../ms/$MS_TYPE/$MS_NAME 
-    
+
+echo "=========================="
 note "Running $MS_NAME ..."
+echo "==========================" 
 
 ./gradlew bootRun 
 
 cd -
 
-echo "Finished with success ..."
+echo "=========================="
+echo "Stop $MS_NAME ..."
+echo "=========================="
 

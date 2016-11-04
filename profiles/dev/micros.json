@@ -2,26 +2,41 @@
     {
         "appname" : "ICE_DISCOVERY_MS", 
         "type" : "support",         
-        "port" : 8761 
+        "port" : 8761,
+        "url" : "http://localhost:8761",
+        "user" : "admin#1",
+        "password" : "8d8433d8-a298-11e6-80f5-76304dec7eb7" 
     },
     {
         "appname" : "ICE_CONFIG_MS",
         "type" : "support",   
-        "port" : 8888 
+        "port" : 8888,
+        "url" : "http://localhost:8888",
+        "user" : "admin#1",
+        "password" : "0f67013e-922e-4f3f-94bf-d5a0e9b976de" 
     },
     {
         "appname" : "ICE_GETWAY_MS",   
-        "type" : "support",             
-        "port" : 8010 
+        "type" : "support",
+        "port" : 8010,
+        "url" : "http://localhost:8010",
+        "user" : "admin#1",
+        "password" : "41488492-6aed-4009-9e48-4152ca3d28ad" 
     },
     {
         "appname" : "ICE_ACCOUNT_MS",
         "type" : "core",  
-        "port" : 8300
+        "port" : 8300,
+        "url" : "http://localhost:8300",
+        "user" : "admin#1",
+        "password" : "2fb375ab-66f2-4393-ae1b-68aea5d1725b" 
     },
     {
         "appname" : "ICE_ADMIN_BACKEND_MS",
         "type" : "customer",  
-        "port" : 8400 
+        "port" : 8400,
+        "url" : "http://localhost:8400",
+        "user" : "admin#1",
+        "password" : "d103c664-6219-455c-960f-f0c7c56af261" 
     }
 ]
