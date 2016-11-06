@@ -7,11 +7,11 @@ function note() {
     printf "\n${GREEN}$@  ${NC}\n" >&2
 }
 
-while getopts ":t:m:" opt; do
+while getopts ":t:b:" opt; do
   case $opt in
-    m) MS_NAME="$OPTARG"
+    b) BK_NAME="$OPTARG"
     ;;
-    t) MS_TYPE="$OPTARG"
+    t) BK_TYPE="$OPTARG"
     ;;
     \?) echo "Invalid option -$OPTARG" >&2
     ;;
@@ -20,19 +20,18 @@ done
 
 
 source ./backing/export-backing.sh
-source ./micros/export-micros.sh
 
-cd ../../ms/$MS_TYPE/$MS_NAME 
+cd backing 
 
 echo "=========================="
-note "Running $MS_NAME ..."
+note "Running $BK_NAME ..."
 echo "==========================" 
 
-./gradlew bootRun 
+docker-compose up $BK_NAME
 
 cd -
 
 echo "=========================="
-echo "Stop $MS_NAME ..."
+echo "Stop $BK_NAME ..."
 echo "=========================="
 

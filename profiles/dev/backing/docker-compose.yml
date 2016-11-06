@@ -1,8 +1,3 @@
-sonarqube:
-  image: sonarqube:latest
-  ports:
-    - "9000:9000"
-    - "9092:9092"
 rabbitmq:
   image: rabbitmq:3-management
   restart: always

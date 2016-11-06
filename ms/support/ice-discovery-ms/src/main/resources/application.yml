@@ -10,14 +10,14 @@ spring:
     name: ice-discovery-ms
 
 server:
-  port: 8761
+  port: ${ICE_DISCOVERY_MS_PORT}
 
 security:
   basic:
     enabled: false
   user:
     name: user
-    password: ${CONFIG_SERVICE_PASSWORD}
+    password: ${ICE_DISCOVERY_MS_PASSWORD}
 
 eureka:
   instance:

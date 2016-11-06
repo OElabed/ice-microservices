@@ -15,14 +15,14 @@ spring:
           uri: file:/workspace-config/
 
 server:  
-  port: 8888
+  port: ${ICE_CONFIG_MS_PORT}
 
 security:
   basic:
     enabled: false
   user:
-    name: user
-    password: ${CONFIG_SERVICE_PASSWORD}
+    name: admin#1
+    password: ${ICE_CONFIG_MS_PASSWORD}
 
 eureka:
   instance:
@@ -30,7 +30,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+      defaultZone: ${ICE_DISCOVERY_MS_URL}/eureka/
 
 logging:
   file: logs/dev_app.log

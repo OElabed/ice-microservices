@@ -34,7 +34,7 @@ import org.junit.Test;
 public class IceGetwayMSApplicationTest {
 
     @Test
-    public void test() {
+    public void contextLoads() {
         assertTrue(true);
     }
 
