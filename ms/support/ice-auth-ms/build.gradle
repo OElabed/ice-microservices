@@ -100,11 +100,16 @@ dependencies {
 
     // Spring Boot
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.security.oauth:spring-security-oauth2")
+    compile("org.springframework.security:spring-security-jwt")
 
     // Spring Cloud
     compile("org.springframework.cloud:spring-cloud-config-client")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka")
+    compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
+    compile("org.springframework.cloud:spring-cloud-starter-oauth2")
 
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")

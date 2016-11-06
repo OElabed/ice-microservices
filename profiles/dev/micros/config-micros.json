@@ -24,6 +24,14 @@
         "password" : "41488492-6aed-4009-9e48-4152ca3d28ad" 
     },
     {
+        "appname" : "ICE_AUTH_MS",   
+        "type" : "support",
+        "port" : 8090,
+        "url" : "http://localhost:8090",
+        "user" : "admin#1",
+        "password" : "41488492-6aed-4009-9e48-4152ca3d28ad" 
+    },
+    {
         "appname" : "ICE_ACCOUNT_MS",
         "type" : "core",  
         "port" : 8300,

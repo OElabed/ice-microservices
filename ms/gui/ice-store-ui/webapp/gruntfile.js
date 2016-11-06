@@ -456,7 +456,7 @@ module.exports = function(grunt) {
    */
   grunt.registerTask('default', ['build', 'karma:unit', 'watch']);
   grunt.registerTask('build', [
-    'clean:build_clean',
+    'clean:build_clean', 
     'jshint',
     'copy:build_app_js',
     'copy:build_app_data',
