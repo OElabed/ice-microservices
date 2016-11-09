@@ -3,12 +3,3 @@ sonarqube:
   ports:
     - "9000:9000"
     - "9092:9092"
-rabbitmq:
-  image: rabbitmq:3-management
-  restart: always
-  ports:
-    - 15672:15672
-    - 5672:5672
-  environment:
-    - RABBITMQ_DEFAULT_USER=admin#1
-    - RABBITMQ_DEFAULT_PASS=${RABBIT_MQ_BUS_PASSWORD}

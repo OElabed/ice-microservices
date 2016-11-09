@@ -18,6 +18,12 @@ do
 
     export $HOST_MS_NAME=$MS_HOST
 
+    REGX_URL=".["$i-1"] | .url"
+    MS_URL="$(jq "$REGX_URL" backing/config-backing.json | sed 's:^.\(.*\).$:\1:')"
+    URL_MS_NAME="$(jq "$REGX_NAME" backing/config-backing.json | tr -d '/"')_URL"
+
+    export $URL_MS_NAME=$MS_URL
+
     REGX_PASS=".["$i-1"] | .password"
     MS_PASS="$(jq "$REGX_PASS" backing/config-backing.json | tr -d '/"')"
     PASS_MS_NAME="$(jq "$REGX_NAME" backing/config-backing.json | tr -d '/"')_PASSWORD"

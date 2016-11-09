@@ -27,6 +27,7 @@
         SPRING_BOOT_VERSION = '1.4.0.RELEASE'
         SPRING_CLOUD = 'Camden.SR1'
         SONARQUBE_VERSION = '2.2'
+        MYSQL_CONNECTOR_VERSION = '5.1.30'
     }
 
     repositories {
@@ -110,6 +111,8 @@ dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
     compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
     compile("org.springframework.cloud:spring-cloud-starter-oauth2")
+
+    compile("mysql:mysql-connector-java:${MYSQL_CONNECTOR_VERSION}")
 
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
