@@ -7,3 +7,12 @@ rabbitmq:
   environment:
     - RABBITMQ_DEFAULT_USER=admin#1
     - RABBITMQ_DEFAULT_PASS=${RABBIT_MQ_BUS_PASSWORD}
+mysql-auth:
+  image: mysql:latest
+  ports:
+   - 3306:3306
+  environment:
+   - MYSQL_ROOT_PASSWORD=${MYSQL_AUTH_DB_PASSWORD}
+   - MYSQL_DATABASE=auth
+  volumes:
+      - /data/mysql:/var/lib/mysql

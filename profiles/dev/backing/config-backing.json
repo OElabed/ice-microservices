@@ -8,5 +8,15 @@
         "docker": "rabbitmq",
         "user" : "admin#1",
         "password" : "e6548908-aed2-4ae3-892b-a8540420e2b2" 
+    },
+    {
+        "name" : "MYSQL_AUTH_DB", 
+        "type" : "db",         
+        "port" : 3306,
+        "host" : "localhost",
+        "url" : "mysql://localhost:3306/auth",
+        "docker": "mysql-auth",
+        "user" : "root",
+        "password" : "48d26363-9f7f-4017-8fbe-99db6db5e633" 
     }
 ]
