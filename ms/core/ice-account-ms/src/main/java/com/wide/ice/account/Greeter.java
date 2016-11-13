@@ -26,7 +26,7 @@ public class Greeter {
     @Value("${configuration.projectName}")
     String projectName;
 
-    @RequestMapping(value = "/", produces = "application/json")
+    @RequestMapping(value = "/greeter", produces = "application/json")
     public List<String> index(){
         List<String> env = Arrays.asList(
                 "message.greeting is: " + greeting,

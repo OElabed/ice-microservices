@@ -27,7 +27,9 @@
         SPRING_BOOT_VERSION = '1.4.0.RELEASE'
         SPRING_CLOUD = 'Camden.SR1'
         SONARQUBE_VERSION = '2.2'
-        MYSQL_CONNECTOR_VERSION = '5.1.30'
+        LOMBOK_VERSION = '1.16.8'
+        FLAPDOODLE_MONGO_VERSION = '1.50.5'
+        JSON_PATH_VERSION = '2.2.0'
     }
 
     repositories {
@@ -103,8 +105,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+    // Security
     compile("org.springframework.security.oauth:spring-security-oauth2")
-    compile("org.springframework.security:spring-security-jwt")
 
     // Spring Cloud
     compile("org.springframework.cloud:spring-cloud-config-client")
@@ -112,7 +116,9 @@ dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
     compile("org.springframework.cloud:spring-cloud-starter-oauth2")
 
-    compile("mysql:mysql-connector-java:${MYSQL_CONNECTOR_VERSION}")
+    // Bean
+    compile("org.projectlombok:lombok:${LOMBOK_VERSION}")
+
 
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
@@ -120,6 +126,8 @@ dependencies {
 
     // tag::tests[]
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("de.flapdoodle.embed:de.flapdoodle.embed.mongo:${FLAPDOODLE_MONGO_VERSION}")
+    testCompile("com.jayway.jsonpath:json-path:${JSON_PATH_VERSION}")
     // end::tests[]
 }
 

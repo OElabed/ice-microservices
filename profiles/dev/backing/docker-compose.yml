@@ -16,3 +16,14 @@ mysql-auth:
    - MYSQL_DATABASE=auth
   volumes:
       - /data/mysql:/var/lib/mysql
+mongo-auth:
+  image: mongo
+  ports:
+   - 27017:27017
+   - 28017:28017
+  environment:
+   - MONGODB_USER=admin#1
+   - MONGODB_PASS=${MONGODB_AUTH_PASSWORD}
+   - MONGODB_DATABASE=authDB
+  volumes:
+      - /data/mongo/auth:/data/db

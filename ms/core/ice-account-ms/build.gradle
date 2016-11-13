@@ -27,6 +27,7 @@
         SPRING_BOOT_VERSION = '1.4.0.RELEASE'
         SPRING_CLOUD = 'Camden.SR1'
         SONARQUBE_VERSION = '2.2'
+        LOMBOK_VERSION = '1.16.8'
     }
 
     repositories {
@@ -103,11 +104,20 @@ dependencies {
     // Spring Boot
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+
+    // Spring security
+    compile('org.springframework.security.oauth:spring-security-oauth2')
+
+    // Bean
+    compile("org.projectlombok:lombok:${LOMBOK_VERSION}")
 
     // Spring Cloud
     compile("org.springframework.cloud:spring-cloud-config-client")
+    compile("org.springframework.cloud:spring-cloud-starter-feign")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
     compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
+    compile("org.springframework.cloud:spring-cloud-starter-oauth2")
 
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")

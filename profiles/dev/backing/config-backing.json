@@ -18,5 +18,15 @@
         "docker": "mysql-auth",
         "user" : "root",
         "password" : "48d26363-9f7f-4017-8fbe-99db6db5e633" 
+    },
+    {
+        "name" : "MONGODB_AUTH", 
+        "type" : "db",         
+        "port" : 27017,
+        "host" : "localhost",
+        "url" : "mongodb://localhost:27017/auth",
+        "docker": "mongo-auth",
+        "user" : "admin#1",
+        "password" : "21f292f6-e110-4531-8a48-fdfb74beb698" 
     }
 ]
