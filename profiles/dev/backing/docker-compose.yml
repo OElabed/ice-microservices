@@ -22,19 +22,19 @@ mongo-auth:
    - 27017:27017
    - 28017:28017
   environment:
-   - MONGODB_USER="admin#1"
-   - MONGODB_PASS="${MONGODB_AUTH_PASSWORD}"
+  #  - MONGODB_USER="admin#1"
+  #  - MONGODB_PASS="${MONGODB_AUTH_PASSWORD}"
    - MONGODB_DATABASE="authDB"
   volumes:
       - /data/mongo/auth:/data/db
 mongo-account:
   image: mongo
   ports:
-   - 27018:27018
-   - 28018:28018
+   - 27018:27017
+   - 28018:28017
   environment:
-   - MONGODB_USER="admin#1"
-   - MONGODB_PASS="${MONGODB_ACCOUNT_PASSWORD}"
+  #  - MONGODB_USER="admin#1"
+  #  - MONGODB_PASS="${MONGODB_ACCOUNT_PASSWORD}"
    - MONGODB_DATABASE="accountDB"
   volumes:
       - /data/mongo/account:/data/db

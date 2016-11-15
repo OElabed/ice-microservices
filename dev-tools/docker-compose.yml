@@ -3,3 +3,7 @@ sonarqube:
   ports:
     - "9000:9000"
     - "9092:9092"
+mongoclient:
+  image: mongoclient/mongoclient
+  ports:
+    - "3000:3000"
