@@ -24,9 +24,19 @@
         "type" : "db",         
         "port" : 27017,
         "host" : "localhost",
-        "url" : "mongodb://localhost:27017/auth",
+        "url" : "mongodb://localhost:27017/authDB",
         "docker": "mongo-auth",
         "user" : "admin#1",
         "password" : "21f292f6-e110-4531-8a48-fdfb74beb698" 
+    },
+    {
+        "name" : "MONGODB_ACCOUNT", 
+        "type" : "db",         
+        "port" : 27018,
+        "host" : "localhost",
+        "url" : "mongodb://localhost:27018/accountDB",
+        "docker": "mongo-account",
+        "user" : "admin#1",
+        "password" : "1a9139c0-4d22-4b6b-a9b8-bd8f2cc087b0" 
     }
 ]

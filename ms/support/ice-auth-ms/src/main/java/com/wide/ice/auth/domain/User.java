@@ -26,8 +26,8 @@ package com.wide.ice.auth.domain;
 
 import java.util.List;
 
-import javax.persistence.Id;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

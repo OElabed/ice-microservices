@@ -45,6 +45,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 
+import com.wide.ice.account.service.security.CustomUserInfoTokenServices;
+
 import feign.RequestInterceptor;
 
 @SpringBootApplication

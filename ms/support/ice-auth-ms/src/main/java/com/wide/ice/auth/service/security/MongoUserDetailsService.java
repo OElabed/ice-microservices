@@ -27,10 +27,12 @@ package com.wide.ice.auth.service.security;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by OELABED on 13/11/2016.
  */
+@Service
 public class MongoUserDetailsService implements UserDetailsService {
 
     @Override

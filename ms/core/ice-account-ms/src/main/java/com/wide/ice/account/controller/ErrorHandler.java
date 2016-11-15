@@ -22,40 +22,25 @@
  * THE SOFTWARE.
  */
 
-package com.wide.ice.account.service;
+package com.wide.ice.account.controller;
 
-import com.wide.ice.account.domain.Account;
-import com.wide.ice.account.domain.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by OELABED on 13/11/2016.
+ * Created by OELABED on 14/11/2016.
  */
-public interface AccountService {
+@Slf4j
+@ControllerAdvice
+public class ErrorHandler {
 
-    /**
-     * Finds account by given name
-     *
-     * @param accountName
-     * @return found account
-     */
-    Account findByName(String accountName);
-
-    /**
-     * Checks if account with the same name already exists
-     * Invokes Auth Service user creation
-     * Creates new account with default parameters
-     *
-     * @param user
-     * @return created account
-     */
-    Account create(User user);
-
-    /**
-     * Validates and applies incoming account updates
-     * Invokes Statistics Service update
-     *
-     * @param name
-     * @param update
-     */
-    void saveChanges(String name, Account update);
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public void processValidationError(IllegalArgumentException e) {
+        log.info("Returning HTTP 400 Bad Request", e);
+    }
 }
