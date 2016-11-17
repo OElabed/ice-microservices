@@ -34,7 +34,7 @@ import com.wide.ice.account.domain.User;
 /**
  * Created by OELABED on 13/11/2016.
  */
-@FeignClient(name = "ice-account-ms")
+@FeignClient(name = "ice-auth-ms")
 public interface IceAuthMSClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/uaa/users", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)

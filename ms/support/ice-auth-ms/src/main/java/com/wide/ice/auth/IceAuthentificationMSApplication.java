@@ -116,10 +116,10 @@ public class IceAuthentificationMSApplication {
 
             // @formatter:off
             clients.inMemory()
-                    /*.withClient("browser")
+                    .withClient("browser")
                     .authorizedGrantTypes("refresh_token", "password")
                     .scopes("ui")
-                    .and()*/
+                    .and()
                     .withClient("ice-account-ms")
                     .secret(env.getProperty("ICE_ACCOUNT_MS_PASSWORD"))
                     .authorizedGrantTypes("client_credentials", "refresh_token")
