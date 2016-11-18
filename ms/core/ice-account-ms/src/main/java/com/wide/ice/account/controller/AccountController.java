@@ -60,7 +60,7 @@ public class AccountController {
     public void saveCurrentAccount(Principal principal, @Valid @RequestBody Account account) {
         accountService.saveChanges(principal.getName(), account);
     }
-
+    
     @RequestMapping(path = "/", method = RequestMethod.POST)
     public Account createNewAccount(@Valid @RequestBody User user) {
         return accountService.create(user);
