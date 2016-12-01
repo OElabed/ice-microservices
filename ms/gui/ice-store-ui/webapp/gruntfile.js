@@ -119,6 +119,14 @@ module.exports = function(grunt) {
           process: processBuildScripts
         }
       },
+      build_icons: {
+        cwd: './src',
+        src: ['icons/**/*'],
+        dest: '<%= build_dir %>',
+        expand: true,
+        flatten: true,
+        filter: 'isFile'
+      },
       build_assets: {
         cwd: './src/assets',
         src: [
@@ -416,6 +424,10 @@ module.exports = function(grunt) {
         files: ['./src/index.html'],
         tasks: ['copy:build_index']
       },
+      src_icons: {
+        files: ['./src/icons/**/*'],
+        tasks: ['copy:build_icons']
+      },
       src_stylesheets: {
         files: ['./src/assets/**/*.less', './src/assets/**/*.css'],
         tasks: ['newer:less:build_less', 'cssmin:build_css', 'clean:build_css_clean', 'autoprefixer:build_autoprefix_css']
@@ -465,6 +477,7 @@ module.exports = function(grunt) {
     'copy:build_shared_views',
     'copy:build_fonts',
     'copy:build_index',
+    'copy:build_icons',
     'copy:build_unit',
     'copy:build_protractor',
     'copy:build_karma',

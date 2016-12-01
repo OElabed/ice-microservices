@@ -25,6 +25,8 @@ module.exports = {
   build: {
     vendor_js: [
       //written in 'index.html' in this order
+      './vendor/jquery/dist/jquery.js',
+      './vendor/bootstrap/dist/js/bootstrap.js',
       './vendor/angular/angular.js',
       './vendor/angular-ui-router/release/angular-ui-router.js',
       './vendor/angular-mocks/angular-mocks.js',
@@ -33,6 +35,7 @@ module.exports = {
     ],
     vendor_css: [
       //concatenated with 'assets' stylesheets in 'app.min.css'
+      './vendor/font-awesome/css/font-awesome.min.css',
       './vendor/bootstrap/dist/css/bootstrap.min.css'
     ]
   },
@@ -53,6 +56,8 @@ module.exports = {
   compile: {
     vendor_min_js: [
       //won't minify again
+      './vendor/jquery/dist/jquery.min.js',
+      './vendor/bootstrap/dist/js/bootstrap.min.js',
       './vendor/angular/angular.min.js',
       './vendor/angular-ui-router/release/angular-ui-router.min.js',
       './vendor/stacktrace-js/dist/stacktrace.min.js',
@@ -99,7 +104,7 @@ module.exports = {
    */
   common: {
     vendor_fonts: [
-      './vendor/bootstrap/dist/fonts/**/*'
+      './vendor/font-awesome/fonts/**/*'
     ]
   },
   /*
