@@ -1,7 +1,7 @@
-angular.module('abs.connexionFeature.signinPage').controller('SigninPageController', siginPageController);
+angular.module('abs.connexionFeature.signupPage').controller('SignupPageController', signupPageController);
 
-siginPageController.$inject = ['$scope', '$stateParams', '$filter'];
-function siginPageController($scope, $stateParams, $filter){
+signupPageController.$inject = ['$scope', '$stateParams', '$filter'];
+function signupPageController($scope, $stateParams, $filter){
   var vm = this;
 
   console.log($scope);

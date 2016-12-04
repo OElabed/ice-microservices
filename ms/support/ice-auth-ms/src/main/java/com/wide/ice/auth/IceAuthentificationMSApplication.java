@@ -117,6 +117,7 @@ public class IceAuthentificationMSApplication {
             // @formatter:off
             clients.inMemory()
                     .withClient("browser")
+                    .secret("secret")
                     .authorizedGrantTypes("refresh_token", "password")
                     .scopes("ui")
                     .and()
