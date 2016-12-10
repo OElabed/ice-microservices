@@ -1,0 +1,36 @@
+{
+  "name": "angular-boilerplate-study",
+  "homepage": "http://abs.danmind.ru",
+  "repository": "https://github.com/danmindru/angular-boilerplate-study",
+  "description": "A study of AngularJS modularity & organization",
+  "keywords": [
+    "AngularJS",
+    "boilerplate",
+    "module"
+  ],
+  "authors": [
+    "Dan Mindru"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.5.8",
+    "loggly-jslogger": "*",
+    "stacktrace-js": "~0.6.2",
+    "angular-ui-router": "~0.3.1",
+    "bootstrap": "~3.3.1",
+    "font-awesome": "fontawesome#^4.7.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.5.8"
+  },
+  "ignore": [
+    "/vendor/",
+    "/node_modules/",
+    "/build/",
+    "/application/",
+    ".DS_Store"
+  ],
+  "main": [
+    "src/app/_app-main/_app_main.init.js"
+  ]
+}

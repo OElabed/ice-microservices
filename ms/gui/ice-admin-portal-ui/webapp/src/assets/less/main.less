@@ -1,0 +1,224 @@
+/*
+ * The MIT License
+ *
+ * Copyright (c) 2016. OELABED
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+// Global colors based on Logo 
+@color-red-clear: #F47340;
+@color-green-clear: #8FDD3C;
+@color-blue-clear: #77C6E5;
+
+
+//////////////////////////////
+// LAYOUT GLOBAL STYLES
+/////////////////////////////
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    padding-top: 50px; 
+    margin-bottom: 60px;
+    >.container {
+        padding: 60px 15px 0;
+    }
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	>img {
+		padding: 7px 14px;
+	}
+}
+
+.container {
+	//margin-bottom: 50px;
+	.text-muted {
+		margin: 20px 0;
+	}
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #f5f5f5;
+	>.container {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+.last-row {
+	margin-bottom: 20px;
+}
+
+// Responsive style
+// @media(max-width:991px) {
+// }
+ 
+// @media (min-width: 768px) {
+// }
+
+
+
+//////////////////////////////
+// CONNEXION-FEATURE STYLES
+/////////////////////////////
+
+.bid_login {
+	.bid_authTitle {
+		text-align: center;
+		line-height: 300%;
+	}
+	.bid_socialButtons {
+		a {
+			color: white;
+			opacity: 0.9;
+			&:hover {
+				color: white;
+				opacity: 1;
+			}
+		}
+		.bid_btn-facebook {
+			background: #3b5998;
+		}
+		.bid_btn-twitter {
+			background: #00aced;
+		}
+		.bid_btn-google {
+			background: #c32f10;
+		}
+	}
+	.bid_loginOr {
+		position: relative;
+		font-size: 1.5em;
+		color: #aaa;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		.bid_hrOr {
+			background-color: #cdcdcd;
+			height: 1px;
+			margin-top: 0px !important;
+			margin-bottom: 0px !important;
+		}
+		.bid_spanOr {
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: -0.6em;
+			margin-left: -1.5em;
+			background-color: white;
+			width: 3em;
+			text-align: center;
+		}
+	}
+	.bid_loginForm {
+		.input-group.i {
+			width: 2em;
+		}
+		.help-block {
+			color: red;
+		}
+	}
+}
+
+// Responsive style
+@media (min-width: 768px) {
+	.bid_row-sm-offset-3 {
+		div {
+			&:first-child[class*="col-"] {
+				margin-left: 25%;
+			}
+		}
+	}
+	.bid_login {
+		.bid_forgotPwd {
+			text-align: right;
+			margin-top: 10px;
+		}
+	}
+}
+
+
+
+.box-new-product {
+  width: 350px; height: 222px;
+  position: relative;
+}
+
+.ribbon {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	z-index: 1;
+	overflow: hidden;
+	width: 75px;
+	height: 75px;
+	text-align: right;
+	span {
+		font-size: 10px;
+		font-weight: bold;
+		color: #FFF;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 20px;
+		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		width: 100px;
+		display: block;
+		background: #79A70A;
+		background: linear-gradient(#F70505 0%, #8F0808 100%);
+		box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+		position: absolute;
+		top: 19px;
+		right: -21px;
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0px;
+			top: 100%;
+			z-index: -1;
+			border-left: 3px solid #8F0808;
+			border-right: 3px solid transparent;
+			border-bottom: 3px solid transparent;
+			border-top: 3px solid #8F0808;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0px;
+			top: 100%;
+			z-index: -1;
+			border-left: 3px solid transparent;
+			border-right: 3px solid #8F0808;
+			border-bottom: 3px solid transparent;
+			border-top: 3px solid #8F0808;
+		}
+	}
+}
