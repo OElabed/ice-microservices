@@ -12,3 +12,6 @@ function rootConfig($locationProvider, $urlRouterProvider){
   $locationProvider.hashPrefix('!');
   $urlRouterProvider.otherwise('/home');
 }
+
+angular.module(absConfig.appRootModuleName).value('AUTH_ENDPOINT','resource/');
+angular.module(absConfig.appRootModuleName).value('LOGOUT_ENDPOINT','resource/');

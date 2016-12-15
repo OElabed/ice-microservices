@@ -9,15 +9,35 @@
                     <span class="icon-bar"></span>
                 </button>
       <a class="navbar-brand" href="index.html">
-        <img style="width: 65px;" alt="Brand" src="src/assets/img/brand/logo.png"> Bid Day  
+        <img style="width: 65px;" alt="Brand" src="src/assets/img/brand/logo.png"> Bid Day
       </a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li ui-sref-active="active">
-          <a href ui-sref="about">About</a>
+      <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Auctions <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href ui-sref="current-auctions">Current Auctions</a>
+            </li>
+            <li>
+              <a href ui-sref="featured-auctions">Featured Auctions</a>
+            </li>
+          </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href ui-sref="category">categorie 1</a>
+            </li>
+            <li>
+              <a href ui-sref="category">categorie 2</a>
+            </li>
+          </ul>
+        </li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -29,7 +49,11 @@
             </li>
           </ul>
         </li>
-        <!--<li class="dropdown">
+        <li ui-sref-active="active">
+          <a href ui-sref="about">About</a>
+        </li>
+      </ul>
+      <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, User <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li>
@@ -44,6 +68,10 @@
             </li>
           </ul>
         </li>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active">
+          <a href ui-sref="signup"><span class="fa fa-tachometer"></span> Dashboard</a>
+        </li>
         <li ui-sref-active="active">
           <a href ui-sref="signup"><span class="fa fa-user-plus"></span> Sign Up</a>
         </li>

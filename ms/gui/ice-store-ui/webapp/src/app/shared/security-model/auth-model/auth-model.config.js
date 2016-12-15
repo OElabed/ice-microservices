@@ -1,0 +1,1 @@
+absConfig.pushAfterBootstrap('abs.securityModel.authModel');
