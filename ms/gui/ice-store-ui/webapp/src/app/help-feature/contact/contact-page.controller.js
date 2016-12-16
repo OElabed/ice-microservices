@@ -1,12 +1,11 @@
-angular.module('abs.helpFeature.contactPage')
-  .controller('ContactPageController', ['$scope', '$stateParams', '$filter',
-    function ($scope, $stateParams, $filter) {
-      var vm = this;
+angular.module('abs.helpFeature.contactPage').controller('ContactPageController', contactPageController);
 
-      console.log($scope);
-      console.log(vm);
-      console.log($stateParams);
-      console.log($filter);
+contactPageController.$inject = ['$scope', '$stateParams', '$filter'];
+function contactPageController($scope, $stateParams, $filter){
+  var vm = this;
 
-    }
-  ]);
+  console.log($scope);
+  console.log(vm);
+  console.log($stateParams);
+  console.log($filter);
+}

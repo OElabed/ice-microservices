@@ -1,12 +1,11 @@
-angular.module('abs.helpFeature.faqPage')
-  .controller('FaqPageController', ['$scope', '$stateParams', '$filter',
-    function ($scope, $stateParams, $filter) {
-      var vm = this;
+angular.module('abs.helpFeature.faqPage').controller('FaqPageController', faqPageController);
 
-      console.log($scope);
-      console.log(vm);
-      console.log($stateParams);
-      console.log($filter);
+faqPageController.$inject = ['$scope', '$stateParams', '$filter'];
+function faqPageController($scope, $stateParams, $filter){
+  var vm = this;
 
-    }
-  ]);
+  console.log($scope);
+  console.log(vm);
+  console.log($stateParams);
+  console.log($filter);
+}

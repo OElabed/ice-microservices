@@ -1,18 +1,18 @@
-angular.module('abs.home')
-    .controller('HomeController', ['ProviderModelService', 'CustomerModelService',
-        function(ProviderModelService, CustomerModelService) {
-            var vm = this;
+angular.module('abs.home').controller('HomeController', homeController);
 
-            ProviderModelService.providerIndex().then(function providerIndexResponse(response) {
-                vm.providers = response.data;
-            }, function providerIndexError(error) {
-                vm.providers = error;
-            });
+homeController.$inject = ['ProviderModelService', 'CustomerModelService'];
+function homeController(ProviderModelService, CustomerModelService){
+  var vm = this;
 
-            CustomerModelService.customerIndex().then(function customerIndexResponse(response) {
-                vm.customers = response.data;
-            }, function customerIndexError(error) {
-                vm.customers = error;
-            });
-        }
-    ]);
+  ProviderModelService.providerIndex().then(function providerIndexResponse(response){
+    vm.providers = response.data;
+  }, function providerIndexError(error){
+    vm.providers = error;
+  });
+
+  CustomerModelService.customerIndex().then(function customerIndexResponse(response){
+    vm.customers = response.data;
+  }, function customerIndexError(error){
+    vm.customers = error;
+  });
+}
