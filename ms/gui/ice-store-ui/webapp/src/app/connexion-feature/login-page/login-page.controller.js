@@ -1,7 +1,7 @@
 angular.module('abs.connexionFeature.loginPage').controller('LoginPageController', loginPageController);
 
-loginPageController.$inject = ['$scope', '$stateParams', '$filter'];
-function loginPageController($scope, $stateParams, $filter) {
+loginPageController.$inject = ['$scope', '$stateParams', '$filter','AuthModelService'];
+function loginPageController($scope, $stateParams, $filter, AuthModelService) {
   var vm = this;
 
   $scope.buttonLogin = "Login";
@@ -11,7 +11,7 @@ function loginPageController($scope, $stateParams, $filter) {
     console.log("login process...");
     console.log("username= " + $scope.credentials.username);
     console.log("password= " + $scope.credentials.password);
-    //console.log("authModelService= " + authModelService);
+    console.log("authModelService= " + AuthModelService);
 
 
     $scope.buttonLogin = "Logging in . . .";

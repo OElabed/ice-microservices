@@ -28,6 +28,7 @@ module.exports = {
       './vendor/jquery/dist/jquery.js',
       './vendor/bootstrap/dist/js/bootstrap.js',
       './vendor/angular/angular.js',
+      './vendor/angular-cookies/angular-cookies.min.js',
       './vendor/angular-ui-router/release/angular-ui-router.js',
       './vendor/angular-mocks/angular-mocks.js',
       './vendor/stacktrace-js/dist/stacktrace.js',

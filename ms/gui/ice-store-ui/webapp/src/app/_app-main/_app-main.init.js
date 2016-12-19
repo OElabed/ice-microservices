@@ -15,7 +15,7 @@
  */
 var absConfig = (function applicationInit(){
   var appRootModuleName = 'abs';
-  var appMainVendorDependencies = ['ui.router', 'sharedViewsModule'];
+  var appMainVendorDependencies = ['ui.router','ngCookies', 'sharedViewsModule'];
 
   var pushAfterBootstrap = function pushAfterBootstrap(lateModule, dependencies){
     angular.module(lateModule, dependencies || []);
