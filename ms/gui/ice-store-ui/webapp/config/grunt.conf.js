@@ -28,16 +28,18 @@ module.exports = {
       './vendor/jquery/dist/jquery.js',
       './vendor/bootstrap/dist/js/bootstrap.js',
       './vendor/angular/angular.js',
-      './vendor/angular-cookies/angular-cookies.min.js',
+      './vendor/angular-cookies/angular-cookies.js',
       './vendor/angular-ui-router/release/angular-ui-router.js',
       './vendor/angular-mocks/angular-mocks.js',
+      './vendor/ng-table/dist/ng-table.js',
       './vendor/stacktrace-js/dist/stacktrace.js',
       './vendor/loggly-jslogger/src/loggly.tracker.js'
     ],
     vendor_css: [
       //concatenated with 'assets' stylesheets in 'app.min.css'
       './vendor/font-awesome/css/font-awesome.min.css',
-      './vendor/bootstrap/dist/css/bootstrap.min.css'
+      './vendor/bootstrap/dist/css/bootstrap.min.css',
+      './vendor/ng-table/dist/ng-table.min.css'
     ]
   },
   /*

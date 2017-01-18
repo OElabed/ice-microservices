@@ -1,11 +1,11 @@
-angular.module('abs.dashboardFeature').directive('liveBidsDashboard', liveBidsDashboard);
+angular.module('abs.dashboardFeature').directive('billingDashboard', billingDashboard);
 
-function liveBidsDashboard() {
+function billingDashboard() {
   return {
     scope: {},
     restrict: 'A',
-    templateUrl: 'views/live-bids-dashboard.html',
-    controller: 'LiveBidsDashboardController',
+    templateUrl: 'views/billing-dashboard.html',
+    controller: 'BillingDashboardController',
     controllerAs: 'vm',
     replace: true,
     bindToController: {

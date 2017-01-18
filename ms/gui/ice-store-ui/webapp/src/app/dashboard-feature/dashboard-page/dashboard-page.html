@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">Dashboard
-				<small>Subheading</small>
+				<!--<small>Subheading</small>-->
 			</h1>
 			<ol class="breadcrumb">
 				<li>
@@ -21,21 +21,21 @@
 		<div class="col-sm-3">
 			<!-- left -->
 			<div class="list-group">
-				<a href="#" class="list-group-item active">
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.live.active }" ng-click="vm.changeMenuItem(1)">
 					<i class="fa fa-bolt" /> Live Bids</a>
-				<a href="#" class="list-group-item">
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.watchlist.active }" ng-click="vm.changeMenuItem(2)">
 					<i class="fa fa-eye" /> Watchlist</a>
-				<a href="#" class="list-group-item">
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.history.active }" ng-click="vm.changeMenuItem(3)">
 					<i class="fa fa-gavel" /> History</a>
-				<a href="#" class="list-group-item">
-					<i class="fa fa-envelope-o" /> Messages <span class="badge">14</span>
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.messages.active }" ng-click="vm.changeMenuItem(4)">
+					<i class="fa fa-envelope-o" /> Messages <span class="badge">{{vm.menu.messages.news}}</span>
 				</a>
-				<a href="#" class="list-group-item">
-					<i class="fa fa-bell-o" /> Notifications <span class="badge">14</span>
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.notifications.active }" ng-click="vm.changeMenuItem(5)">
+					<i class="fa fa-bell-o" /> Notifications <span class="badge">{{vm.menu.notifications.news}}</span>
 				</a>
-				<a href="#" class="list-group-item">
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.invoices.active }" ng-click="vm.changeMenuItem(6)">
 					<i class="fa fa-truck" /> Invoices</a>
-				<a href="#" class="list-group-item">
+				<a href="" class="list-group-item" ng-class="{ active : vm.menu.billing.active }" ng-click="vm.changeMenuItem(7)">
 					<i class="fa fa-credit-card" /> Billing</a>
 			</div>
 
@@ -45,8 +45,15 @@
 		<div class="col-sm-9">
 
 			<!-- column 2 -->
-			<section live-bids-dashboard></section>
-			
+			<section is-active="vm.menu.live.active" live-bids-dashboard></section>
+			<section is-active="vm.menu.watchlist.active" watchlist-dashboard></section>
+			<section is-active="vm.menu.history.active" history-dashboard></section>
+			<section is-active="vm.menu.messages.active" messages-dashboard></section>
+			<section is-active="vm.menu.notifications.active" notifications-dashboard></section>
+			<section is-active="vm.menu.invoices.active" invoices-dashboard></section>
+			<section is-active="vm.menu.billing.active" billing-dashboard></section>
+
+
 		</div>
 	</div>
 	<!-- /.row -->

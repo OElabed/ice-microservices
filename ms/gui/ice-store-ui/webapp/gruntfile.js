@@ -119,9 +119,9 @@ module.exports = function(grunt) {
           process: processBuildScripts
         }
       },
-      build_icons: {
+      build_favicons: {
         cwd: './src',
-        src: ['icons/**/*'],
+        src: ['favicons/**/*'],
         dest: '<%= build_dir %>',
         expand: true,
         flatten: true,
@@ -424,9 +424,9 @@ module.exports = function(grunt) {
         files: ['./src/index.html'],
         tasks: ['copy:build_index']
       },
-      src_icons: {
-        files: ['./src/icons/**/*'],
-        tasks: ['copy:build_icons']
+      src_favicons: {
+        files: ['./src/favicons/**/*'],
+        tasks: ['copy:build_favicons']
       },
       src_stylesheets: {
         files: ['./src/assets/**/*.less', './src/assets/**/*.css'],
@@ -477,7 +477,7 @@ module.exports = function(grunt) {
     'copy:build_shared_views',
     'copy:build_fonts',
     'copy:build_index',
-    'copy:build_icons',
+    'copy:build_favicons',
     'copy:build_unit',
     'copy:build_protractor',
     'copy:build_karma',
